@@ -1,0 +1,5 @@
+{
+    "telemetry.enableTelemetry": false, //Turn off telemetry data being sent out
+    "editor.trimAutoWhitespace": false,
+    "security.workspace.trust.untrustedFiles": "open", //Don't remove whitespace on empty lines
+}

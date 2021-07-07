@@ -1,0 +1,26 @@
+Cookies
+*-journal
+languagepacks.json
+machineid
+Network Persistent State
+QuotaManager
+storage.json
+TransportSecurity
+
+Backups/
+blob_storage/
+Cache/
+CachedData/
+CachedExtensions/
+Code Cache/
+Crashpad/
+databases/
+Dictionaries/
+GPUCache/
+Local Storage/
+logs/
+Service Worker/
+Workspaces/
+User/globalStorage
+User/snippets
+User/workspaceStorage
