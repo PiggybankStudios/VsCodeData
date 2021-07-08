@@ -6,6 +6,7 @@ Network Persistent State
 QuotaManager
 storage.json
 TransportSecurity
+rapid_render.json
 
 Backups/
 blob_storage/
@@ -24,3 +25,4 @@ Workspaces/
 User/globalStorage
 User/snippets
 User/workspaceStorage
+Session Storage/
