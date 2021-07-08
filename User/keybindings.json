@@ -7,6 +7,19 @@
 	//+-----------------------------------------------------------------+
 	//|                          ctrl+ Commands                         |
 	//+-----------------------------------------------------------------+
+	// { "key": "ctrl+f1",  "command": "do_nothing" },
+	// { "key": "ctrl+f2",  "command": "do_nothing" }, //TODO: Make this a CRC16 calculating hotkey
+	// { "key": "ctrl+f3",  "command": "do_nothing" }, //TODO: Make convert dec to hex command
+	// { "key": "ctrl+f4",  "command": "do_nothing" }, //TODO: Make an ASCII to hex command
+	// { "key": "ctrl+f5",  "command": "do_nothing" },
+	// { "key": "ctrl+f6",  "command": "do_nothing" },
+	// { "key": "ctrl+f7",  "command": "do_nothing" },
+	// { "key": "ctrl+f8",  "command": "do_nothing" },
+	// { "key": "ctrl+f9",  "command": "do_nothing" },
+	// { "key": "ctrl+f10", "command": "do_nothing" },
+	// { "key": "ctrl+f11", "command": "do_nothing" },
+	// { "key": "ctrl+f12", "command": "do_nothing" }, //TODO: Make this an open file given by "string" under cursor
+	
 	{ "key": "ctrl+q",   "command": "do_nothing" }, //TODO: Rebind me!
 	{ "key": "ctrl+w",   "command": "workbench.action.closeActiveEditor" },
 	{ "key": "ctrl+e",   "command": "workbench.action.reopenClosedEditor" },
@@ -44,10 +57,65 @@
 	{ "key": "ctrl+.",   "command": "workbench.action.navigateForward" },
 	{ "key": "ctrl+/",   "command": "editor.action.commentLine" },
 	
+	// { "key": "ctrl+insert",   "command": "do_nothing" },
+	// { "key": "ctrl+delete",   "command": "do_nothing" },
+	// { "key": "ctrl+home",     "command": "do_nothing" },
+	// { "key": "ctrl+end",      "command": "do_nothing" },
+	// { "key": "ctrl+pageup",   "command": "do_nothing" },
+	// { "key": "ctrl+pagedown", "command": "do_nothing" },
+	
+	// { "key": "ctrl+up",    "command": "do_nothing" }, //TODO: Make a goto next empty line command
+	// { "key": "ctrl+down",  "command": "do_nothing" }, //TODO: Make a goto next empty line command
+	{ "key": "ctrl+left",  "command": "cursorWordLeft", "when": "textInputFocus && !accessibilityModeEnabled" },
+	{ "key": "ctrl+right", "command": "cursorWordRight", "when": "textInputFocus && !accessibilityModeEnabled" },
+	
+	// { "key": "ctrl+escape",    "command": "do_nothing" },
+	// { "key": "ctrl+backspace", "command": "do_nothing" },
+	// { "key": "ctrl+enter",     "command": "do_nothing" },
+	// { "key": "ctrl+pause",     "command": "do_nothing" },
+	{ "key": "ctrl+tab",       "command": "workbench.action.toggleZenMode" },
+	// { "key": "ctrl+space",     "command": "do_nothing" }, //TODO: Make this a scroll to cursor command
+	// { "key": "ctrl+clear",     "command": "do_nothing" },
+	
 	//+-----------------------------------------------------------------+
 	//|                       ctrl+shift+ Commands                      |
 	//+-----------------------------------------------------------------+
-	{ "key": "ctrl+shift+a", "command": "editor.action.selectAll" },
+	// { "key": "ctrl+shift+q",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+w",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+e",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+r",   "command": "do_nothing" }, //TODO: Make this "replace with spaces" style kill command
+	// { "key": "ctrl+shift+t",   "command": "do_nothing" }, //TODO: Make this create/uncreate large header command
+	// { "key": "ctrl+shift+y",   "command": "do_nothing" },
+	{ "key": "ctrl+shift+u",   "command": "editor.action.transformToLowercase" },
+	{ "key": "ctrl+shift+i",   "command": "editor.foldAll", "when": "editorTextFocus && foldingEnabled" }, //TODO: Make this fold things ONLY at the same level rathar than just "Fold All"
+	// { "key": "ctrl+shift+o",   "command": "do_nothing" }, //TODO: Make this an "open previous fold" command
+	// { "key": "ctrl+shift+p",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+[",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+]",   "command": "do_nothing" },
+	{ "key": "ctrl+shift+\\",  "command": "workbench.action.editorLayoutSingle" },
+	
+	{ "key": "ctrl+shift+a",   "command": "editor.action.selectAll" },
+	// { "key": "ctrl+shift+s",   "command": "do_nothing" },
+	{ "key": "ctrl+shift+d",   "command": "editor.action.addSelectionToPreviousFindMatch", "when": "editorFocus" }, //TODO: Make this work when we have multiple selections already in opposite direction??
+	{ "key": "ctrl+shift+f",   "command": "workbench.action.findInFiles" },
+	// { "key": "ctrl+shift+g",   "command": "do_nothing" }, //TODO: Make this a google search command the deletes the selected text at the same time
+	// { "key": "ctrl+shift+h",   "command": "do_nothing" }, //TODO: Make this a file header generating command
+	// { "key": "ctrl+shift+j",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+k",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+l",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+;",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+'",   "command": "do_nothing" },
+	
+	{ "key": "ctrl+shift+z",   "command": "redo" },
+	// { "key": "ctrl+shift+x",   "command": "do_nothing" },
+	{ "key": "ctrl+shift+c",   "command": "editor.action.duplicateSelection" },
+	// { "key": "ctrl+shift+v",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+b",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+n",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+m",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+,",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+.",   "command": "do_nothing" },
+	// { "key": "ctrl+shift+/",   "command": "do_nothing" },
 	
 	//+-----------------------------------------------------------------+
 	//|                          alt+ Commands                          |
@@ -61,6 +129,7 @@
 	//+-----------------------------------------------------------------+
 	//|                        ctrl+alt+ Commands                       |
 	//+-----------------------------------------------------------------+
+	{ "key": "ctrl+alt+s",   "command": "workbench.action.toggleSidebarVisibility" }
 	
 	//+-----------------------------------------------------------------+
 	//|                     ctrl+alt+shift+ Commands                    |
