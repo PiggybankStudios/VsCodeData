@@ -64,8 +64,8 @@
 	// { "key": "ctrl+pageup",   "command": "do_nothing" },
 	// { "key": "ctrl+pagedown", "command": "do_nothing" },
 	
-	// { "key": "ctrl+up",    "command": "do_nothing" }, //TODO: Make a goto next empty line command
-	// { "key": "ctrl+down",  "command": "do_nothing" }, //TODO: Make a goto next empty line command
+	{ "key": "ctrl+up",    "command": "cursorMove", "args": { "to": "prevBlankLine" } },
+	{ "key": "ctrl+down",  "command": "cursorMove", "args": { "to": "nextBlankLine" } },
 	{ "key": "ctrl+left",  "command": "cursorWordLeft", "when": "textInputFocus && !accessibilityModeEnabled" },
 	{ "key": "ctrl+right", "command": "cursorWordRight", "when": "textInputFocus && !accessibilityModeEnabled" },
 	
@@ -74,7 +74,7 @@
 	// { "key": "ctrl+enter",     "command": "do_nothing" },
 	// { "key": "ctrl+pause",     "command": "do_nothing" },
 	{ "key": "ctrl+tab",       "command": "workbench.action.toggleZenMode" },
-	// { "key": "ctrl+space",     "command": "do_nothing" }, //TODO: Make this a scroll to cursor command
+	{ "key": "ctrl+space",     "command": "revealLine", "args": { "lineNumber": "${lineNumber}", "at": "center" } },
 	// { "key": "ctrl+clear",     "command": "do_nothing" },
 	
 	//+-----------------------------------------------------------------+

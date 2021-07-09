@@ -1,0 +1,42 @@
+{
+	"folders":
+	[
+		{
+			"path": "..\\..\\..\\.vscode\\extensions\\taylorExt",
+		},
+		{
+			"path": ".",
+			"folder_exclude_patterns": [
+				"Backups",
+				"blob_storage",
+				"Cache",
+				"CachedData",
+				"CachedExtensions",
+				"Code Cache",
+				"Crashpad",
+				"databases",
+				"Dictionaries",
+				"GPUCache",
+				"Local Storage",
+				"logs",
+				"Service Worker",
+				"Session Storage",
+				"Workspaces",
+				"User/globalStorage",
+				"User/snippets",
+				"User/workspaceStorage",
+			],
+			"file_exclude_patterns": [
+				"Cookies",
+				"Cookies-journal",
+				"languagepacks.json",
+				"machineid",
+				"Network Persistent State",
+				"QuotaManager",
+				"QuotaManager-journal",
+				"storage.json",
+				"TransportSecurity",
+			],
+		},
+	],
+}
