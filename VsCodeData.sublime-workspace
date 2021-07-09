@@ -876,6 +876,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/robbitay/.vscode/extensions/taylorExt/.gitignore",
 		"/C/gamedev/projects/PrincessCastleQuest/goal.txt",
 		"/C/gamedev/projects/PrincessCastleQuest/code/game/game_entity_move.cpp",
 		"/C/gamedev/projects/PrincessCastleQuest/data/changelog.txt",
@@ -1002,12 +1003,11 @@
 		"/C/gamedev/projects/PrincessCastleQuest/code/app/app_audio_interface.cpp",
 		"/C/gamedev/projects/PrincessCastleQuest/lib/include/mylib/my_vectors.h",
 		"/c/gamedev/projects/princesscastlequest/code/win32/win32_main.h",
-		"/C/gamedev/projects/PrincessCastleQuest/code/win32/win32_defines.h",
-		"/C/gamedev/projects/PrincessCastleQuest/code/win32/win32_memory.cpp"
+		"/C/gamedev/projects/PrincessCastleQuest/code/win32/win32_defines.h"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -1372,7 +1372,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 36.0
 	},
 	"input":
 	{
@@ -1421,7 +1421,7 @@
 	"project": "VsCodeData.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 68.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2554,7 +2554,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 299.0,
 	"status_bar_visible": true,
 	"template_settings":

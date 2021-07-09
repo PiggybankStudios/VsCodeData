@@ -9,8 +9,8 @@
 	//+-----------------------------------------------------------------+
 	// { "key": "ctrl+f1",  "command": "do_nothing" },
 	// { "key": "ctrl+f2",  "command": "do_nothing" }, //TODO: Make this a CRC16 calculating hotkey
-	// { "key": "ctrl+f3",  "command": "do_nothing" }, //TODO: Make convert dec to hex command
-	// { "key": "ctrl+f4",  "command": "do_nothing" }, //TODO: Make an ASCII to hex command
+	{ "key": "ctrl+f3",  "command": "taylorExt.convertNumber", "args": { "from": "dec", "to": "hex" } },
+	{ "key": "ctrl+f4",  "command": "taylorExt.convertNumber", "args": { "from": "ascii", "to": "hex", "prefix": "0x" } },
 	// { "key": "ctrl+f5",  "command": "do_nothing" },
 	// { "key": "ctrl+f6",  "command": "do_nothing" },
 	// { "key": "ctrl+f7",  "command": "do_nothing" },
@@ -64,8 +64,8 @@
 	// { "key": "ctrl+pageup",   "command": "do_nothing" },
 	// { "key": "ctrl+pagedown", "command": "do_nothing" },
 	
-	{ "key": "ctrl+up",    "command": "cursorMove", "args": { "to": "prevBlankLine" } },
-	{ "key": "ctrl+down",  "command": "cursorMove", "args": { "to": "nextBlankLine" } },
+	{ "key": "ctrl+up",    "command": "cursorMove", "args": { "to": "prevBlankLine" } }, //TODO: Make this select the end of the line (after indentation) rather than the beginning
+	{ "key": "ctrl+down",  "command": "cursorMove", "args": { "to": "nextBlankLine" } }, //TODO: Make this select the end of the line (after indentation) rather than the beginning
 	{ "key": "ctrl+left",  "command": "cursorWordLeft", "when": "textInputFocus && !accessibilityModeEnabled" },
 	{ "key": "ctrl+right", "command": "cursorWordRight", "when": "textInputFocus && !accessibilityModeEnabled" },
 	
@@ -74,7 +74,7 @@
 	// { "key": "ctrl+enter",     "command": "do_nothing" },
 	// { "key": "ctrl+pause",     "command": "do_nothing" },
 	{ "key": "ctrl+tab",       "command": "workbench.action.toggleZenMode" },
-	{ "key": "ctrl+space",     "command": "revealLine", "args": { "lineNumber": "${lineNumber}", "at": "center" } },
+	{ "key": "ctrl+space",     "command": "taylorExt.scrollToCursor" },
 	// { "key": "ctrl+clear",     "command": "do_nothing" },
 	
 	//+-----------------------------------------------------------------+
@@ -116,6 +116,9 @@
 	// { "key": "ctrl+shift+,",   "command": "do_nothing" },
 	// { "key": "ctrl+shift+.",   "command": "do_nothing" },
 	// { "key": "ctrl+shift+/",   "command": "do_nothing" },
+	
+	{ "key": "ctrl+shift+up",    "command": "cursorMove", "args": { "to": "prevBlankLine", "select": true } },
+	{ "key": "ctrl+shift+down",  "command": "cursorMove", "args": { "to": "nextBlankLine", "select": true } },
 	
 	//+-----------------------------------------------------------------+
 	//|                          alt+ Commands                          |
