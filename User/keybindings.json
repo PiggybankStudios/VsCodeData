@@ -93,8 +93,8 @@
 	//+-----------------------------------------------------------------+
 	// { "key": "ctrl+shift+f1",  "command": "do_nothing" },
 	// { "key": "ctrl+shift+f2",  "command": "do_nothing" },
-	// { "key": "ctrl+shift+f3",  "command": "do_nothing" },
-	// { "key": "ctrl+shift+f4",  "command": "do_nothing" },
+	{ "key": "ctrl+shift+f3",  "command": "taylorExt.convertNumber", "args": { "from": "hex", "to": "dec" } },
+	{ "key": "ctrl+shift+f4",  "command": "taylorExt.convertNumber", "args": { "from": "hex", "to": "ascii", "splitter": " ", "joiner": "" } },
 	// { "key": "ctrl+shift+f5",  "command": "do_nothing" },
 	// { "key": "ctrl+shift+f6",  "command": "do_nothing" },
 	// { "key": "ctrl+shift+f7",  "command": "do_nothing" },
