@@ -38,7 +38,7 @@
 	{ "key": "ctrl+s",   "command": "workbench.action.files.save" },
 	{ "key": "ctrl+d",   "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" },
 	{ "key": "ctrl+f",   "command": "actions.find", "when": "editorFocus || editorIsOpen" },
-	//{ "key": "ctrl+g",   "command": "do_nothing" }, //TODO: Make this a google search hotkey
+	{ "key": "ctrl+g",   "command": "taylorExt.googleSearch" },
 	//{ "key": "ctrl+h",   "command": "do_nothing" }, //TODO: Make this open the paired .c or .h file
 	{ "key": "ctrl+j",   "command": "do_nothing" }, //TODO: Rebind me!
 	{ "key": "ctrl+k",   "command": "do_nothing" }, //TODO: Rebind me!
@@ -98,7 +98,7 @@
 	// { "key": "ctrl+shift+s",   "command": "do_nothing" },
 	{ "key": "ctrl+shift+d",   "command": "editor.action.addSelectionToPreviousFindMatch", "when": "editorFocus" }, //TODO: Make this work when we have multiple selections already in opposite direction??
 	{ "key": "ctrl+shift+f",   "command": "workbench.action.findInFiles" },
-	// { "key": "ctrl+shift+g",   "command": "do_nothing" }, //TODO: Make this a google search command the deletes the selected text at the same time
+	{ "key": "ctrl+shift+g",   "command": "taylorExt.googleSearch", "args": { "kill": true } },
 	// { "key": "ctrl+shift+h",   "command": "do_nothing" }, //TODO: Make this a file header generating command
 	// { "key": "ctrl+shift+j",   "command": "do_nothing" },
 	// { "key": "ctrl+shift+k",   "command": "do_nothing" },
