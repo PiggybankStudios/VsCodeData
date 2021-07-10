@@ -8,8 +8,8 @@
 	//|                          ctrl+ Commands                         |
 	//+-----------------------------------------------------------------+
 	// { "key": "ctrl+f1",  "command": "do_nothing" },
-	// { "key": "ctrl+f2",  "command": "do_nothing" }, //TODO: Make this a CRC16 calculating hotkey
-	{ "key": "ctrl+f3",  "command": "taylorExt.convertNumber", "args": { "from": "dec", "to": "hex" } },
+	{ "key": "ctrl+f2",  "command": "taylorExt.convertNumber", "args": { "from": "hex", "to": "bin" } },
+	{ "key": "ctrl+f3",  "command": "taylorExt.convertNumber", "args": { "from": "dec", "to": "hex", "prefix": "0x" } },
 	{ "key": "ctrl+f4",  "command": "taylorExt.convertNumber", "args": { "from": "ascii", "to": "hex", "prefix": "0x" } },
 	// { "key": "ctrl+f5",  "command": "do_nothing" },
 	// { "key": "ctrl+f6",  "command": "do_nothing" },
@@ -20,7 +20,6 @@
 	// { "key": "ctrl+f11", "command": "do_nothing" },
 	// { "key": "ctrl+f12", "command": "do_nothing" }, //TODO: Make this an open file given by "string" under cursor
 	
-	// { "key": "ctrl+0",  "command": "do_nothing" },
 	// { "key": "ctrl+1",  "command": "do_nothing" },
 	// { "key": "ctrl+2",  "command": "do_nothing" },
 	// { "key": "ctrl+3",  "command": "do_nothing" },
@@ -30,6 +29,7 @@
 	// { "key": "ctrl+7",  "command": "do_nothing" },
 	// { "key": "ctrl+8",  "command": "do_nothing" },
 	// { "key": "ctrl+9",  "command": "do_nothing" },
+	// { "key": "ctrl+0",  "command": "do_nothing" },
 	
 	{ "key": "ctrl+q",   "command": "do_nothing" }, //TODO: Rebind me!
 	{ "key": "ctrl+w",   "command": "workbench.action.closeActiveEditor" },
@@ -92,7 +92,7 @@
 	//|                       ctrl+shift+ Commands                      |
 	//+-----------------------------------------------------------------+
 	// { "key": "ctrl+shift+f1",  "command": "do_nothing" },
-	// { "key": "ctrl+shift+f2",  "command": "do_nothing" },
+	{ "key": "ctrl+shift+f2",  "command": "taylorExt.convertNumber", "args": { "from": "bin", "to": "hex", "prefix": "0x" } },
 	{ "key": "ctrl+shift+f3",  "command": "taylorExt.convertNumber", "args": { "from": "hex", "to": "dec" } },
 	{ "key": "ctrl+shift+f4",  "command": "taylorExt.convertNumber", "args": { "from": "hex", "to": "ascii", "splitter": " ", "joiner": "" } },
 	// { "key": "ctrl+shift+f5",  "command": "do_nothing" },
@@ -104,7 +104,6 @@
 	// { "key": "ctrl+shift+f11", "command": "do_nothing" },
 	// { "key": "ctrl+shift+f12", "command": "do_nothing" },
 	
-	// { "key": "ctrl+shift+0",  "command": "do_nothing" },
 	// { "key": "ctrl+shift+1",  "command": "do_nothing" },
 	// { "key": "ctrl+shift+2",  "command": "do_nothing" },
 	// { "key": "ctrl+shift+3",  "command": "do_nothing" },
@@ -114,6 +113,7 @@
 	// { "key": "ctrl+shift+7",  "command": "do_nothing" },
 	// { "key": "ctrl+shift+8",  "command": "do_nothing" },
 	// { "key": "ctrl+shift+9",  "command": "do_nothing" },
+	// { "key": "ctrl+shift+0",  "command": "do_nothing" },
 	
 	// { "key": "ctrl+shift+q",   "command": "do_nothing" },
 	// { "key": "ctrl+shift+w",   "command": "do_nothing" },
@@ -161,15 +161,16 @@
 	
 	{ "key": "ctrl+shift+up",    "command": "cursorMove", "args": { "to": "prevBlankLine", "select": true } },
 	{ "key": "ctrl+shift+down",  "command": "cursorMove", "args": { "to": "nextBlankLine", "select": true } },
-	// { "key": "ctrl+shift+left",  "command": "do_nothing" },
-	// { "key": "ctrl+shift+right", "command": "do_nothing" },
+	{ "key": "ctrl+shift+left",  "command": "cursorWordLeftSelect", "when": "textInputFocus && !accessibilityModeEnabled" },
+	{ "key": "ctrl+shift+right",  "command": "cursorWordRightSelect", "when": "textInputFocus && !accessibilityModeEnabled" },
 	
 	// { "key": "ctrl+shift+escape",    "command": "do_nothing" },
 	// { "key": "ctrl+shift+backspace", "command": "do_nothing" },
 	// { "key": "ctrl+shift+enter",     "command": "do_nothing" },
 	// { "key": "ctrl+shift+pause",     "command": "do_nothing" },
 	// { "key": "ctrl+shift+tab",       "command": "do_nothing" },
-	// { "key": "ctrl+shift+space",     "command": "do_nothing" },
+	{ "key": "ctrl+shift+space",     "command": "list.toggleKeyboardNavigation", "when": "!listFocus && listSupportsMultiselect" },
+	{ "key": "ctrl+shift+space",     "command": "editor.action.triggerParameterHints" },
 	// { "key": "ctrl+shift+clear",     "command": "do_nothing" },
 	
 	//+-----------------------------------------------------------------+
@@ -188,20 +189,20 @@
 	// { "key": "alt+f11", "command": "do_nothing" },
 	// { "key": "alt+f12", "command": "do_nothing" },
 	
-	// { "key": "alt+0",  "command": "do_nothing" },
-	// { "key": "alt+1",  "command": "do_nothing" },
-	// { "key": "alt+2",  "command": "do_nothing" },
-	// { "key": "alt+3",  "command": "do_nothing" },
+	// { "key": "alt+1",  "command": "do_nothing" }, //TODO: Make this toggle regex in search view
+	// { "key": "alt+2",  "command": "do_nothing" }, //TODO: Make this toggle case sensitivity in search view
+	// { "key": "alt+3",  "command": "do_nothing" }, //TODO: Make this toggle whole word in search view
 	// { "key": "alt+4",  "command": "do_nothing" },
 	// { "key": "alt+5",  "command": "do_nothing" },
 	// { "key": "alt+6",  "command": "do_nothing" },
 	// { "key": "alt+7",  "command": "do_nothing" },
 	// { "key": "alt+8",  "command": "do_nothing" },
 	// { "key": "alt+9",  "command": "do_nothing" },
+	// { "key": "alt+0",  "command": "do_nothing" },
 	
-	// { "key": "alt+q",   "command": "do_nothing" },
-	// { "key": "alt+w",   "command": "do_nothing" },
-	// { "key": "alt+e",   "command": "do_nothing" },
+	// { "key": "alt+q",   "command": "do_nothing" }, //TODO: Make this a convertCase command to camelCase
+	// { "key": "alt+w",   "command": "do_nothing" }, //TODO: Make this a convertCase command to lower words
+	// { "key": "alt+e",   "command": "do_nothing" }, //TODO: Make this a convertCase command to lower_underscores
 	// { "key": "alt+r",   "command": "do_nothing" },
 	// { "key": "alt+t",   "command": "do_nothing" },
 	// { "key": "alt+y",   "command": "do_nothing" },
@@ -214,8 +215,9 @@
 	// { "key": "alt+\\",  "command": "do_nothing" },
 	
 	{ "key": "alt+a",   "command": "taylorExt.alignCursors" },
-	{ "key": "alt+s",   "command": "editor.action.nextSelectionMatchFindAction", "when": "editorFocus" },
-	// { "key": "alt+d",   "command": "do_nothing" },
+	{ "key": "alt+s",   "command": "editor.action.smartSelect.expand", "when": "editorFocus && !editorHasSelection" }, //TODO: Make this select a word properly
+	{ "key": "alt+s",   "command": "editor.action.nextSelectionMatchFindAction", "when": "editorFocus && editorHasSelection" },
+	{ "key": "alt+d",   "command": "workbench.action.gotoSymbol" },
 	// { "key": "alt+f",   "command": "do_nothing" },
 	// { "key": "alt+g",   "command": "do_nothing" },
 	// { "key": "alt+h",   "command": "do_nothing" },
@@ -229,7 +231,7 @@
 	// { "key": "alt+x",   "command": "do_nothing" },
 	// { "key": "alt+c",   "command": "do_nothing" },
 	// { "key": "alt+v",   "command": "do_nothing" },
-	// { "key": "alt+b",   "command": "do_nothing" },
+	// { "key": "alt+b",   "command": "do_nothing" }, //TODO: Maybe make this a "move_to_brackets" equivalent
 	// { "key": "alt+n",   "command": "do_nothing" },
 	// { "key": "alt+m",   "command": "do_nothing" },
 	// { "key": "alt+,",   "command": "do_nothing" },
@@ -243,10 +245,10 @@
 	// { "key": "alt+pageup",   "command": "do_nothing" },
 	// { "key": "alt+pagedown", "command": "do_nothing" },
 	
-	// { "key": "alt+up",    "command": "do_nothing" },
-	// { "key": "alt+down",  "command": "do_nothing" },
-	// { "key": "alt+left",  "command": "do_nothing" },
-	// { "key": "alt+right", "command": "do_nothing" },
+	{ "key": "alt+up",    "command": "scrollLineUp" },
+	{ "key": "alt+down",  "command": "scrollLineDown" },
+	{ "key": "alt+left",  "command": "cursorWordPartLeft" },
+	{ "key": "alt+right", "command": "cursorWordPartRight" },
 	
 	// { "key": "alt+escape",    "command": "do_nothing" },
 	// { "key": "alt+backspace", "command": "do_nothing" },
@@ -272,7 +274,6 @@
 	// { "key": "alt+shift+f11", "command": "do_nothing" },
 	// { "key": "alt+shift+f12", "command": "do_nothing" },
 	
-	// { "key": "alt+shift+0",  "command": "do_nothing" },
 	// { "key": "alt+shift+1",  "command": "do_nothing" },
 	// { "key": "alt+shift+2",  "command": "do_nothing" },
 	// { "key": "alt+shift+3",  "command": "do_nothing" },
@@ -282,10 +283,11 @@
 	// { "key": "alt+shift+7",  "command": "do_nothing" },
 	// { "key": "alt+shift+8",  "command": "do_nothing" },
 	// { "key": "alt+shift+9",  "command": "do_nothing" },
+	// { "key": "alt+shift+0",  "command": "do_nothing" },
 	
-	// { "key": "alt+shift+q",   "command": "do_nothing" },
-	// { "key": "alt+shift+w",   "command": "do_nothing" },
-	// { "key": "alt+shift+e",   "command": "do_nothing" },
+	// { "key": "alt+shift+q",   "command": "do_nothing" }, //TODO: Make this a convertCase command to UpperFirst
+	// { "key": "alt+shift+w",   "command": "do_nothing" }, //TODO: Make this a convertCase command to Upper First Words
+	// { "key": "alt+shift+e",   "command": "do_nothing" }, //TODO: Make this a convertCase command to UPPER_UNDERSCORES
 	// { "key": "alt+shift+r",   "command": "do_nothing" },
 	// { "key": "alt+shift+t",   "command": "do_nothing" },
 	// { "key": "alt+shift+y",   "command": "do_nothing" },
@@ -297,9 +299,10 @@
 	// { "key": "alt+shift+]",   "command": "do_nothing" },
 	// { "key": "alt+shift+\\",  "command": "do_nothing" },
 	
-	// { "key": "alt+shift+a",   "command": "do_nothing" },
-	// { "key": "alt+shift+s",   "command": "do_nothing" },
-	// { "key": "alt+shift+d",   "command": "do_nothing" },
+	// { "key": "alt+shift+a",   "command": "do_nothing" }, //TODO: Make this a custom "align_character" command? Did this command ever really work out?
+	{ "key": "alt+shift+s",   "command": "editor.action.smartSelect.expand", "when": "editorFocus && !editorHasSelection" }, //TODO: Make this select a word properly
+	{ "key": "alt+shift+s",   "command": "editor.action.previousSelectionMatchFindAction", "when": "editorFocus && editorHasSelection" }, //TODO: Keep this from opening the find panel. Make this select a word if nothing is selected already
+	{ "key": "alt+shift+d",   "command": "workbench.action.showAllSymbols" },
 	// { "key": "alt+shift+f",   "command": "do_nothing" },
 	// { "key": "alt+shift+g",   "command": "do_nothing" },
 	// { "key": "alt+shift+h",   "command": "do_nothing" },
@@ -329,8 +332,8 @@
 	
 	{ "key": "alt+shift+up",    "command": "editor.action.insertCursorAbove" },
 	{ "key": "alt+shift+down",  "command": "editor.action.insertCursorBelow" },
-	// { "key": "alt+shift+left",  "command": "do_nothing" },
-	// { "key": "alt+shift+right", "command": "do_nothing" },
+	{ "key": "alt+shift+left",  "command": "cursorWordPartLeftSelect" },
+	{ "key": "alt+shift+right", "command": "cursorWordPartRightSelect" },
 	
 	// { "key": "alt+shift+escape",    "command": "do_nothing" },
 	// { "key": "alt+shift+backspace", "command": "do_nothing" },
@@ -356,8 +359,7 @@
 	// { "key": "ctrl+alt+f11", "command": "do_nothing" },
 	// { "key": "ctrl+alt+f12", "command": "do_nothing" },
 	
-	// { "key": "ctrl+alt+0",  "command": "do_nothing" },
-	// { "key": "ctrl+alt+1",  "command": "do_nothing" },
+	// { "key": "ctrl+alt+1",  "command": "do_nothing" }, //TODO: Make these all "fold_by_level" commands?
 	// { "key": "ctrl+alt+2",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+3",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+4",  "command": "do_nothing" },
@@ -366,26 +368,27 @@
 	// { "key": "ctrl+alt+7",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+8",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+9",  "command": "do_nothing" },
+	// { "key": "ctrl+alt+0",  "command": "do_nothing" },
 	
-	// { "key": "ctrl+alt+q",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+w",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+e",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+r",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+t",   "command": "do_nothing" },
+	{ "key": "ctrl+alt+q",   "command": "workbench.action.closeFolder" },
+	{ "key": "ctrl+alt+w",   "command": "workbench.action.openRecent" }, //TODO: Make this a proper "Open Recent Workspace" command somehow??
+	// { "key": "ctrl+alt+e",   "command": "do_nothing" }, //TODO: Make this an "indent_blank_lines" command
+	// { "key": "ctrl+alt+r",   "command": "renameFile" }, //TODO: This renames the selected file in the sidebar, not the currently open file
+	{ "key": "ctrl+alt+t",   "command": "editor.action.trimTrailingWhitespace", "when": "editorTextFocus && !editorReadonly" }, //TODO: Keep this from removing indentation from empty lines
 	// { "key": "ctrl+alt+y",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+u",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+i",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+o",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+p",   "command": "do_nothing" },
+	{ "key": "ctrl+alt+o",   "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
+	{ "key": "ctrl+alt+p",   "command": "workbench.action.showCommands" },
 	// { "key": "ctrl+alt+[",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+]",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+\\",  "command": "do_nothing" },
 	
 	// { "key": "ctrl+alt+a",   "command": "do_nothing" },
 	{ "key": "ctrl+alt+s",   "command": "workbench.action.toggleSidebarVisibility" },
-	// { "key": "ctrl+alt+d",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+f",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+g",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+d",   "command": "do_nothing" }, //TODO: Make this a "toggle_define_endings" command
+	{ "key": "ctrl+alt+f",   "command": "editor.action.startFindReplaceAction", "when": "editorFocus || editorIsOpen" },
+	// { "key": "ctrl+alt+g",   "command": "do_nothing" }, //TODO: Make this a "start_git_bash" command
 	// { "key": "ctrl+alt+h",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+j",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+k",   "command": "do_nothing" },
@@ -397,11 +400,11 @@
 	// { "key": "ctrl+alt+x",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+c",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+v",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+b",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+b",   "command": "do_nothing" }, //TODO: Make this an "insert_nums_hex" command?
 	{ "key": "ctrl+alt+n",   "command": "taylorExt.generateNums", "args": { "format": "0:1" } },
 	// { "key": "ctrl+alt+m",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+,",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+.",   "command": "do_nothing" },
+	{ "key": "ctrl+alt+,",   "command": "workbench.action.moveEditorToPreviousGroup" },
+	{ "key": "ctrl+alt+.",   "command": "workbench.action.moveEditorToNextGroup" }, //TODO: Something is wierd here with the new group not getting focused right?
 	// { "key": "ctrl+alt+/",   "command": "do_nothing" },
 	
 	// { "key": "ctrl+alt+insert",   "command": "do_nothing" },
@@ -413,12 +416,12 @@
 	
 	// { "key": "ctrl+alt+up",    "command": "do_nothing" },
 	// { "key": "ctrl+alt+down",  "command": "do_nothing" },
-	// { "key": "ctrl+alt+left",  "command": "do_nothing" },
-	// { "key": "ctrl+alt+right", "command": "do_nothing" },
+	{ "key": "ctrl+alt+left",  "command": "workbench.action.previousEditorInGroup" },
+	{ "key": "ctrl+alt+right", "command": "workbench.action.nextEditorInGroup" },
 	
 	// { "key": "ctrl+alt+escape",    "command": "do_nothing" },
 	// { "key": "ctrl+alt+backspace", "command": "do_nothing" },
-	// { "key": "ctrl+alt+enter",     "command": "do_nothing" },
+	{ "key": "ctrl+alt+enter",     "command": "workbench.action.gotoLine" },
 	// { "key": "ctrl+alt+pause",     "command": "do_nothing" },
 	// { "key": "ctrl+alt+tab",       "command": "do_nothing" },
 	// { "key": "ctrl+alt+space",     "command": "do_nothing" },
@@ -434,13 +437,12 @@
 	// { "key": "ctrl+alt+shift+f5",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+f6",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+f7",  "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+f8",  "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+f8",  "command": "do_nothing" }, //TODO: Make a document function macro
 	// { "key": "ctrl+alt+shift+f9",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+f10", "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+f11", "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+f12", "command": "do_nothing" },
 	
-	// { "key": "ctrl+alt+shift+0",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+1",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+2",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+3",  "command": "do_nothing" },
@@ -450,22 +452,23 @@
 	// { "key": "ctrl+alt+shift+7",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+8",  "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+9",  "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+0",  "command": "do_nothing" },
 	
 	// { "key": "ctrl+alt+shift+q",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+w",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+w",   "command": "do_nothing" }, //TODO: Make this a convertCase command to First upper case with spaces
 	// { "key": "ctrl+alt+shift+e",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+r",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+r",   "command": "do_nothing" }, //TODO: Make this a delete file hotkey (with confirmation first)
 	// { "key": "ctrl+alt+shift+t",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+y",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+u",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+i",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+o",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+p",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+p",   "command": "do_nothing" }, //TODO: Make this print out information about the current "scope" under the cursor for syntax creation testing
 	// { "key": "ctrl+alt+shift+[",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+]",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+\\",  "command": "do_nothing" },
 	
-	// { "key": "ctrl+alt+shift+a",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+a",   "command": "do_nothing" }, //TODO: Make this a select functions command
 	// { "key": "ctrl+alt+shift+s",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+d",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+f",   "command": "do_nothing" },
@@ -481,9 +484,9 @@
 	// { "key": "ctrl+alt+shift+x",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+c",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+v",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+b",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+b",   "command": "do_nothing" }, //TODO: Make this an insert nums hex command
 	{ "key": "ctrl+alt+shift+n",   "command": "taylorExt.generateNums" },
-	// { "key": "ctrl+alt+shift+m",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+m",   "command": "do_nothing" }, //TODO: Make this an MD5 hash command
 	// { "key": "ctrl+alt+shift+,",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+.",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+/",   "command": "do_nothing" },
@@ -497,8 +500,8 @@
 	
 	// { "key": "ctrl+alt+shift+up",    "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+down",  "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+left",  "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+right", "command": "do_nothing" },
+	{ "key": "ctrl+alt+shift+left",  "command": "workbench.action.focusPreviousGroup" },
+	{ "key": "ctrl+alt+shift+right", "command": "workbench.action.focusNextGroup" },
 	
 	// { "key": "ctrl+alt+shift+escape",    "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+backspace", "command": "do_nothing" },
@@ -511,4 +514,5 @@
 	//+-----------------------------------------------------------------+
 	//|                       Contextual Bindings                       |
 	//+-----------------------------------------------------------------+
+	//TODO: Add alt+x, alt+shift+x, alt+- and alt+shift+- that only work in a TODO list file
 ]

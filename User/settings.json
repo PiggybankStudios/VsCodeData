@@ -1,6 +1,6 @@
 {
     "telemetry.enableTelemetry": false, //Turn off telemetry data being sent out
-    "editor.trimAutoWhitespace": false,
+    "editor.trimAutoWhitespace": false, //Don't remove whitespace on empty lines
     "security.workspace.trust.untrustedFiles": "open",
     "extensions.ignoreRecommendations": true,
     "editor.smoothScrolling": true,
@@ -8,5 +8,7 @@
     "editor.stickyTabStops": true,
     "editor.showFoldingControls": "always",
     "editor.cursorBlinking": "smooth",
-    "editor.cursorWidth": 3, //Don't remove whitespace on empty lines
+    "editor.cursorWidth": 3,
+    "editor.hover.enabled": false,
+    "editor.quickSuggestionsDelay": 1200,
 }
