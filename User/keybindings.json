@@ -43,7 +43,7 @@
 	{ "key": "ctrl+j",   "command": "do_nothing" }, //TODO: Rebind me!
 	{ "key": "ctrl+k",   "command": "do_nothing" }, //TODO: Rebind me!
 	//{ "key": "ctrl+l",   "command": "do_nothing" }, //TODO: Make this collapse curly braces to single line or expand to multi-line
-	//{ "key": "ctrl+;",   "command": "do_nothing" }, //TODO: Make this a custom "Taylor" command
+	{ "key": "ctrl+;",   "command": "taylorExt.test" },
 	{ "key": "ctrl+'",   "command": "workbench.debug.action.toggleRepl", "when": "workbench.panel.repl.view.active" },
 	
 	{ "key": "ctrl+z",   "command": "undo" },
@@ -132,11 +132,13 @@
 	//+-----------------------------------------------------------------+
 	//|                        ctrl+alt+ Commands                       |
 	//+-----------------------------------------------------------------+
-	{ "key": "ctrl+alt+s",   "command": "workbench.action.toggleSidebarVisibility" }
+	{ "key": "ctrl+alt+s",   "command": "workbench.action.toggleSidebarVisibility" },
+	{ "key": "ctrl+alt+n",   "command": "taylorExt.generateNums", "args": { "format": "0:1" } },
 	
 	//+-----------------------------------------------------------------+
 	//|                     ctrl+alt+shift+ Commands                    |
 	//+-----------------------------------------------------------------+
+	{ "key": "ctrl+alt+shift+n",   "command": "taylorExt.generateNums" },
 	
 	//+-----------------------------------------------------------------+
 	//|                       Contextual Bindings                       |
