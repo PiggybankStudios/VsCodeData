@@ -159,8 +159,8 @@
 	// { "key": "ctrl+shift+pageup",   "command": "do_nothing" },
 	// { "key": "ctrl+shift+pagedown", "command": "do_nothing" },
 	
-	{ "key": "ctrl+shift+up",    "command": "cursorMove", "args": { "to": "prevBlankLine", "select": true } },
-	{ "key": "ctrl+shift+down",  "command": "cursorMove", "args": { "to": "nextBlankLine", "select": true } },
+	{ "key": "ctrl+shift+up",    "command": "taylorExt.gotoEmptyLine", "args": { "select": true, "forward": false } },
+	{ "key": "ctrl+shift+down",  "command": "taylorExt.gotoEmptyLine", "args": { "select": true, "forward": true  } },
 	{ "key": "ctrl+shift+left",  "command": "cursorWordLeftSelect", "when": "textInputFocus && !accessibilityModeEnabled" },
 	{ "key": "ctrl+shift+right",  "command": "cursorWordRightSelect", "when": "textInputFocus && !accessibilityModeEnabled" },
 	
