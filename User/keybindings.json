@@ -75,8 +75,8 @@
 	// { "key": "ctrl+pageup",   "command": "do_nothing" },
 	// { "key": "ctrl+pagedown", "command": "do_nothing" },
 	
-	{ "key": "ctrl+up",    "command": "cursorMove", "args": { "to": "prevBlankLine" } }, //TODO: Make this not consider empty lines that are in folded sections. Make this select the end of the line (after indentation) rather than the beginning
-	{ "key": "ctrl+down",  "command": "cursorMove", "args": { "to": "nextBlankLine" } }, //TODO: Make this not consider empty lines that are in folded sections. Make this select the end of the line (after indentation) rather than the beginning
+	{ "key": "ctrl+up",    "command": "taylorExt.gotoEmptyLine", "args": { "forward": false } },
+	{ "key": "ctrl+down",  "command": "taylorExt.gotoEmptyLine", "args": { "forward": true  } },
 	{ "key": "ctrl+left",  "command": "cursorWordLeft", "when": "textInputFocus && !accessibilityModeEnabled" },
 	{ "key": "ctrl+right", "command": "cursorWordRight", "when": "textInputFocus && !accessibilityModeEnabled" },
 	
