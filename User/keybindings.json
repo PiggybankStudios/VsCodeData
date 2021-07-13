@@ -419,6 +419,10 @@
 	{ "key": "ctrl+alt+left",  "command": "workbench.action.previousEditorInGroup" },
 	{ "key": "ctrl+alt+right", "command": "workbench.action.nextEditorInGroup" },
 	
+	//NOTE: This is a workaround for remote desktop eating the ctrl+alt+left/right bindings. We use AutoHotkey to remap to this on the local machine
+	{ "key": "ctrl+alt+z", "command": "workbench.action.previousEditorInGroup" },
+	{ "key": "ctrl+alt+x", "command": "workbench.action.nextEditorInGroup" },
+	
 	// { "key": "ctrl+alt+escape",    "command": "do_nothing" },
 	// { "key": "ctrl+alt+backspace", "command": "do_nothing" },
 	{ "key": "ctrl+alt+enter",     "command": "workbench.action.gotoLine" },
