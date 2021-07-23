@@ -13,4 +13,7 @@
     "editor.quickSuggestionsDelay": 1200,
     "update.enableWindowsBackgroundUpdates": false,
     "update.mode": "none",
+    "csharp.referencesCodeLens.enabled": true,
+    "omnisharp.autoStart": false,
+    "omnisharp.disableMSBuildDiagnosticWarning": true,
 }
