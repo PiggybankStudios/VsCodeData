@@ -16,4 +16,5 @@
     "csharp.referencesCodeLens.enabled": true,
     "omnisharp.autoStart": false,
     "omnisharp.disableMSBuildDiagnosticWarning": true,
+    "redhat.telemetry.enabled": false,
 }
