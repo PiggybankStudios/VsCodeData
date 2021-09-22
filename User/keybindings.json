@@ -35,8 +35,8 @@
 	{ "key": "ctrl+w",   "command": "workbench.action.closeActiveEditor" },
 	{ "key": "ctrl+e",   "command": "workbench.action.reopenClosedEditor" },
 	{ "key": "ctrl+r",   "command": "editor.action.deleteLines" },
-	//{ "key": "ctrl+t",   "command": "do_nothing" }, //TODO: Make this create/uncreate header syntax
-	//{ "key": "ctrl+y",   "command": "do_nothing" }, //TODO: Make this print out syntax information at the cursor's location
+	{ "key": "ctrl+t",   "command": "taylorExt.formatCommentHeader", "args": { "width": 32, "top_char": "=", "bottom_char": "=" } },
+	{ "key": "ctrl+y",   "command": "taylorExt.printSyntaxInfo" },
 	{ "key": "ctrl+u",   "command": "editor.action.transformToUppercase" },
 	{ "key": "ctrl+i",   "command": "editor.foldRecursively" }, //TODO: Make this fold at the same indentation as the cursor
 	{ "key": "ctrl+o",   "command": "editor.unfold" }, //TODO: Make this look ahead to the next folded region
@@ -119,7 +119,7 @@
 	// { "key": "ctrl+shift+w",   "command": "do_nothing" }, //TODO: Make this close all OTHER tabs but this one
 	// { "key": "ctrl+shift+e",   "command": "do_nothing" },
 	// { "key": "ctrl+shift+r",   "command": "do_nothing" }, //TODO: Make this "replace with spaces" style kill command
-	// { "key": "ctrl+shift+t",   "command": "do_nothing" }, //TODO: Make this create/uncreate large header command
+	{ "key": "ctrl+shift+t",   "command": "taylorExt.formatCommentHeader", "args": { "width": 64, "top_char": "-", "bottom_char": "-" } },
 	// { "key": "ctrl+shift+y",   "command": "do_nothing" },
 	{ "key": "ctrl+shift+u",   "command": "editor.action.transformToLowercase" },
 	{ "key": "ctrl+shift+i",   "command": "editor.foldAll", "when": "editorTextFocus && foldingEnabled" }, //TODO: Make this fold things ONLY at the same level rathar than just "Fold All"
@@ -189,9 +189,12 @@
 	// { "key": "alt+f11", "command": "do_nothing" },
 	// { "key": "alt+f12", "command": "do_nothing" },
 	
-	// { "key": "alt+1",  "command": "do_nothing" }, //TODO: Make this toggle regex in search view
-	// { "key": "alt+2",  "command": "do_nothing" }, //TODO: Make this toggle case sensitivity in search view
-	// { "key": "alt+3",  "command": "do_nothing" }, //TODO: Make this toggle whole word in search view
+	{ "key": "alt+1",  "command": "toggleSearchCaseSensitive", "when": "searchViewletFocus" },
+	{ "key": "alt+1",  "command": "toggleFindCaseSensitive", "when": "editorFocus" },
+	{ "key": "alt+2",  "command": "toggleSearchWholeWord", "when": "searchViewletFocus" },
+	{ "key": "alt+2",  "command": "toggleFindWholeWord", "when": "editorFocus" },
+	{ "key": "alt+3",  "command": "toggleSearchRegex", "when": "searchViewletFocus" },
+	{ "key": "alt+3",  "command": "toggleFindRegex", "when": "editorFocus" },
 	// { "key": "alt+4",  "command": "do_nothing" },
 	// { "key": "alt+5",  "command": "do_nothing" },
 	// { "key": "alt+6",  "command": "do_nothing" },
@@ -505,7 +508,14 @@
 	// { "key": "ctrl+alt+shift+up",    "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+down",  "command": "do_nothing" },
 	{ "key": "ctrl+alt+shift+left",  "command": "workbench.action.focusPreviousGroup" },
-	{ "key": "ctrl+alt+shift+right", "command": "workbench.action.focusNextGroup" },
+	{
+		"key": "ctrl+alt+shift+right",
+		"command": "workbench.action.focusNextGroup"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "-workbench.action.showAllSymbols"
+	},
 	
 	// { "key": "ctrl+alt+shift+escape",    "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+backspace", "command": "do_nothing" },
