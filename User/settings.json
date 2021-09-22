@@ -17,4 +17,5 @@
     "omnisharp.autoStart": false,
     "omnisharp.disableMSBuildDiagnosticWarning": true,
     "redhat.telemetry.enabled": false,
+    "workbench.colorTheme": "Monokai",
 }
