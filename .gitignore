@@ -27,3 +27,5 @@ User/snippets
 User/workspaceStorage
 Session Storage/
 CachedExtensionVSIXs/
+
+*.sublime-workspace
