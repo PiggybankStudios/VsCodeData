@@ -116,7 +116,7 @@
 	// { "key": "ctrl+shift+0",  "command": "do_nothing" },
 	
 	// { "key": "ctrl+shift+q",   "command": "do_nothing" },
-	{ "key": "ctrl+shift+w",   "command": "workbench.action.closeOtherEditors" }, //TODO: Make this close all OTHER tabs but this one
+	{ "key": "ctrl+shift+w",   "command": "workbench.action.closeOtherEditors" },
 	// { "key": "ctrl+shift+e",   "command": "do_nothing" },
 	// { "key": "ctrl+shift+r",   "command": "do_nothing" }, //TODO: Make this "replace with spaces" style kill command
 	{ "key": "ctrl+shift+t",   "command": "taylorExt.formatCommentHeader", "args": { "width": 64, "top_char": "-", "bottom_char": "-" } },
@@ -470,7 +470,7 @@
 	// { "key": "ctrl+alt+shift+u",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+i",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+o",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+p",   "command": "do_nothing" }, //TODO: Make this print out information about the current "scope" under the cursor for syntax creation testing
+	// { "key": "ctrl+alt+shift+p",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+[",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+]",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+\\",  "command": "do_nothing" },
@@ -508,14 +508,7 @@
 	// { "key": "ctrl+alt+shift+up",    "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+down",  "command": "do_nothing" },
 	{ "key": "ctrl+alt+shift+left",  "command": "workbench.action.focusPreviousGroup" },
-	{
-		"key": "ctrl+alt+shift+right",
-		"command": "workbench.action.focusNextGroup"
-	},
-	{
-		"key": "ctrl+t",
-		"command": "-workbench.action.showAllSymbols"
-	},
+	{ "key": "ctrl+alt+shift+right", "command": "workbench.action.focusNextGroup" },
 	
 	// { "key": "ctrl+alt+shift+escape",    "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+backspace", "command": "do_nothing" },
@@ -529,4 +522,10 @@
 	//|                       Contextual Bindings                       |
 	//+-----------------------------------------------------------------+
 	//TODO: Add alt+x, alt+shift+x, alt+- and alt+shift+- that only work in a TODO list file
+	
+	// +--------------------------------------------------------------+
+	// |                       Removed Bindings                       |
+	// +--------------------------------------------------------------+
+	{ "key": "ctrl+t", "command": "-workbench.action.showAllSymbols" },
+	
 ]
