@@ -487,15 +487,15 @@
 	// { "key": "ctrl+alt+shift+;",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+'",   "command": "do_nothing" },
 	
-	// { "key": "ctrl+alt+shift+z",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+x",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+z",   "command": "do_nothing" }, //TODO: Make this focus the neighboring group
+	// { "key": "ctrl+alt+shift+x",   "command": "do_nothing" }, //TODO: Make this focus the neighboring group
 	// { "key": "ctrl+alt+shift+c",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+v",   "command": "do_nothing" },
 	// { "key": "ctrl+alt+shift+b",   "command": "do_nothing" }, //TODO: Make this an insert nums hex command
 	{ "key": "ctrl+alt+shift+n",   "command": "taylorExt.generateNums" },
 	// { "key": "ctrl+alt+shift+m",   "command": "do_nothing" }, //TODO: Make this an MD5 hash command
-	// { "key": "ctrl+alt+shift+,",   "command": "do_nothing" },
-	// { "key": "ctrl+alt+shift+.",   "command": "do_nothing" },
+	// { "key": "ctrl+alt+shift+,",   "command": "do_nothing" }, //TODO: Make this focus the neighboring group
+	// { "key": "ctrl+alt+shift+.",   "command": "do_nothing" }, //TODO: Make this focus the neighboring group
 	// { "key": "ctrl+alt+shift+/",   "command": "do_nothing" },
 	
 	// { "key": "ctrl+alt+shift+insert",   "command": "do_nothing" },
