@@ -27,5 +27,15 @@ User/snippets
 User/workspaceStorage
 Session Storage/
 CachedExtensionVSIXs/
+User/History/
+DawnGraphiteCache/
+DawnWebGPUCache/
+Network/
+CachedProfilesData/
+Shared Dictionary/
 
+SharedStorage*
 *.sublime-workspace
+code.lock
+Local State
+Preferences

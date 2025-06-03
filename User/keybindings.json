@@ -526,6 +526,24 @@
 	// +--------------------------------------------------------------+
 	// |                       Removed Bindings                       |
 	// +--------------------------------------------------------------+
-	{ "key": "ctrl+t", "command": "-workbench.action.showAllSymbols" },
+	{
+		"key": "ctrl+t",
+		"command": "-workbench.action.showAllSymbols"
+	},
+	{
+		"key": "ctrl+shift+'",
+		"command": "unity-tools.OpenDocs",
+		"when": "editorTextFocus && editorLangId == 'csharp'"
+	},
+	{
+		"key": "ctrl+'",
+		"command": "-unity-tools.OpenDocs",
+		"when": "editorTextFocus && editorLangId == 'csharp'"
+	},
+	{
+		"key": "ctrl+shift+'",
+		"command": "-unity-tools.SearchDocs",
+		"when": "editorTextFocus && editorLangId == 'csharp'"
+	},
 	
 ]

@@ -12,10 +12,19 @@
     "editor.hover.enabled": false,
     "editor.quickSuggestionsDelay": 1200,
     "update.enableWindowsBackgroundUpdates": false,
-    "update.mode": "none",
-    "csharp.referencesCodeLens.enabled": true,
+    "update.mode": "manual",
     "omnisharp.autoStart": false,
     "omnisharp.disableMSBuildDiagnosticWarning": true,
-    "redhat.telemetry.enabled": false,
     "workbench.colorTheme": "MyMonokai",
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+    },
+    "dotnet.codeLens.enableReferencesCodeLens": false,
+    "godot.csharp.executablePath": "F:\\Programs\\Godot\\Godot_v4.4-stable_mono_win64\\Godot_v4.4-stable_mono_win64.exe",
+    "editor.inlayHints.enabled": "off",
+    "dotnet.codeLens.enableTestsCodeLens": false,
+    "godotTools.editorPath.godot4": "F:\\Programs\\Godot\\Godot_v4.4-stable_mono_win64\\Godot_v4.4-stable_mono_win64.exe",
+    "godotTools.editorPath.godot3": "F:\\Programs\\Godot\\Godot_v4.4-stable_mono_win64\\Godot_v4.4-stable_mono_win64.exe",
 }
