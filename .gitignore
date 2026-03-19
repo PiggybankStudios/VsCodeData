@@ -11,6 +11,7 @@ rapid_render.json
 Backups/
 blob_storage/
 Cache/
+CachedConfigurations/
 CachedData/
 CachedExtensions/
 Code Cache/
@@ -20,7 +21,9 @@ Dictionaries/
 GPUCache/
 Local Storage/
 logs/
+MetaWorkspaces/
 Service Worker/
+WebStorage/
 Workspaces/
 User/globalStorage
 User/snippets
@@ -39,3 +42,8 @@ SharedStorage*
 code.lock
 Local State
 Preferences
+.DS_Store
+DIPS
+DIPS-wal
+Trust Tokens
+Meta-application-config-*.json
